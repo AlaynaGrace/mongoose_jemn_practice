@@ -46,3 +46,20 @@ app.get('/gems',function(req,res){
     }
   });
 });
+
+app.delete('/gems/:id', function(req,res){
+  User.remove({
+    _id: req.params.id
+  },function(err, user){
+    if(err){
+      console.log(err);
+    }
+    else{
+      console.log('Gem deleted');
+      res.send(200);
+    }
+  });
+
+
+
+});

@@ -6,7 +6,7 @@ var userSchema = new Schema({
   gemType: String,
   estimatedValue: Number,
   rare: Boolean,
-  dateCollected: Date
+  dateCollected: {type: Date, default: Date.now}
 });
 
 var User = mongoose.model('gems', userSchema);
